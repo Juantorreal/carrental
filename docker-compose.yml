@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 
 services:
     database:
@@ -10,7 +10,7 @@ services:
         environment:
           - POSTGRES_USER=docker
           - POSTGRES_PASSWORD=docker
-          - POSTGRES_DB=carrental 
+          - POSTGRES_DB=database 
         volumes:
           - pgdata:/data/postgres
         

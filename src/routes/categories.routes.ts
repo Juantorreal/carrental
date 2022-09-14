@@ -1,13 +1,13 @@
 import { request, response, Router } from "express";
 import { v4 as uuidV4 } from "uuid";
 import { CategoriesRepository } from "../modules/cars/repositories/implementations/CategoriesRepository";
-import { createCategoryController } from "../modules/cars/useCases/createCategory";
+import createCategoryController from "../modules/cars/useCases/createCategory";
 import { listCategoriesController } from "../modules/cars/useCases/createCategory/listCategories";
 import multer from "multer";
 import { importCategoryController } from "../modules/cars/useCases/createCategory/importCategory";
 
 
-const categoriesRoutes = Router();
+const categoriesRoutes = Router(); 
 
 const upload = multer({
     dest: "./tmp",
@@ -17,7 +17,7 @@ const upload = multer({
 
 categoriesRoutes.post("/", (request, response) => {
     console.log("reload")
-   return createCategoryController.handle(request,response);
+   return createCategoryController().handle(request,response);
 })
 
 categoriesRoutes.get("/",(request, response)=> {
